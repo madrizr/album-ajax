@@ -1,7 +1,7 @@
 document.querySelector('#boton').addEventListener('click', traerDatos());
 
 function traerDatos(){
-	console.log("ejecutado")
+	//console.log("ejecutado")
 
 	const xhttp = new XMLHttpRequest();
 
@@ -9,11 +9,11 @@ function traerDatos(){
 
 	xhttp.send();
 
-	xhttp.onreadystatechange = function(){
+	xhttp.onreadystatechange = () => {
 		if (this.readyState == 4 && this.status == 200) {
 			//console.log(this.responseText);
 			let datos = JSON.parse(this.responseText);
-			console.log(datos);
+			//console.log(datos);
 			let res = document.querySelector('#res');
 			res.innerHTML = '';
 
